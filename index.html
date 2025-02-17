@@ -299,86 +299,15 @@
 
                 <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
-                    <ul class="project-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+                    <ul id="project-filters" class="project-filters isotope-filters" data-aos="fade-up"
+                        data-aos-delay="100">
                         <li data-filter="*" class="filter-active">Todas</li>
-                        <li data-filter=".filter-siemens">Siemens</li>
-                        <li data-filter=".filter-AB">Allen Bradley</li>
-                        <li data-filter=".filter-otros">Otros</li>
-                    </ul><!-- End project Filters -->
-
-                    <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-                        <div class="col-lg-4 col-md-6 project-item isotope-item filter-siemens">
-                            <img src="assets/img/project/celda-pallet.png" class="img-fluid" alt="Proyecto 1">
-                            <div class="project-info">
-                                <h4>Celda de palletizado</h4>
-                                <a href="assets/img/project/celda-pallet.png" title="" data-gallery="project-gallery-app"
-                                    class="glightbox preview-link">
-                                    <i class="bi bi-zoom-in"></i>
-                                </a>
-                                <!-- <a href="portfolio-details.html" title="More Details" class="details-link">
-                                    <i class="bi bi-link-45deg"></i>
-                                </a> -->
-                                <a href="portfolio-details.html?pid=1" title="More Details" class="details-link">
-                                    <i class="bi bi-link-45deg"></i>
-                                </a>
-                            </div>
-                        </div><!-- End project Item -->
-                        <div class="col-lg-4 col-md-6 project-item isotope-item filter-siemens">
-                            <img src="assets/img/project/casepacker.png" class="img-fluid" alt="Proyecto 2">
-                            <div class="project-info">
-                                <h4>Encajonador de sobres</h4>
-                                <a href="assets/img/project/casepacker.png" title="" data-gallery="project-gallery-app"
-                                    class="glightbox preview-link">
-                                    <i class="bi bi-zoom-in"></i>
-                                </a>
-                                <a href="portfolio-details.html?pid=2" title="More Details" class="details-link">
-                                    <i class="bi bi-link-45deg"></i>
-                                </a>
-                            </div>
-                        </div><!-- End project Item -->
-
-                        <div class="col-lg-4 col-md-6 project-item isotope-item filter-AB">
-                            <img src="assets/img/project/receta.png" class="img-fluid" alt="Proyecto 1">
-                            <div class="project-info">
-                                <h4>Trazabilidad de producción</h4>
-                                <a href="assets/img/project/receta.png" title="" data-gallery="project-gallery-app"
-                                    class="glightbox preview-link">
-                                    <i class="bi bi-zoom-in"></i>
-                                </a>
-                                <a href="portfolio-details.html" title="More Details" class="details-link">
-                                    <i class="bi bi-link-45deg"></i>
-                                </a>
-                            </div>
-                        </div><!-- End project Item -->
-
-                        <div class="col-lg-4 col-md-6 project-item isotope-item filter-otros">
-                            <img src="assets/img/project/planta-eflu.png" class="img-fluid" alt="Proyecto 1">
-                            <div class="project-info">
-                                <h4>Planta de tratamiento de efluentes</h4>
-                                <a href="assets/img/project/planta-eflu.png" title="" data-gallery="project-gallery-app"
-                                    class="glightbox preview-link">
-                                    <i class="bi bi-zoom-in"></i>
-                                </a>
-                                <a href="portfolio-details.html?pid=3" title="More Details" class="details-link">
-                                    <i class="bi bi-link-45deg"></i>
-                                </a>
-                            </div>
-                        </div><!-- End project Item -->
-                        <div class="col-lg-4 col-md-6 project-item isotope-item filter-otros">
-                            <img src="assets/img/project/refri-nh3.png" class="img-fluid" alt="Proyecto 1">
-                            <div class="project-info">
-                                <h4>Sistema de refrigeración por NH3</h4>
-                                <a href="assets/img/project/refri-nh3.png" title="" data-gallery="project-gallery-app"
-                                    class="glightbox preview-link">
-                                    <i class="bi bi-zoom-in"></i>
-                                </a>
-                                <a href="portfolio-details.html?pid=4" title="More Details" class="details-link">
-                                    <i class="bi bi-link-45deg"></i>
-                                </a>
-                            </div>
-                        </div><!-- End project Item -->
-                    </div><!-- End project Container -->
+                        <!-- Los filtros se crean dinámicamente con JS -->
+                    </ul>
+                    <div id="project-container" class="row gy-4 isotope-container" data-aos="fade-up"
+                        data-aos-delay="200">
+                        <!-- Las tarjetas se crean dinámicamente con JS -->
+                    </div>
                 </div>
             </div>
         </section><!-- /project Section -->
@@ -597,6 +526,8 @@
 
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/cardProject.js"></script>
 
 </body>
 
