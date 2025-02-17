@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("No se encontraron los contenedores necesarios");
         return;
     }
+    const largoMax = 10;
 
     // Obtener tecnologías únicas y convertirlas en filtros
     const uniqueTechs = [...new Set(projects.map((p) => p.tech.toLowerCase()))];
@@ -23,7 +24,27 @@ document.addEventListener("DOMContentLoaded", function () {
         filterItem.setAttribute("data-filter", `.filter-${tech}`);
         filterContainer.appendChild(filterItem);
     });
-    const projectsToShow = projects.slice(0, 10);
+
+    // Si hay más de 10 proyectos, mostrar botón "Ver todos los proyectos"
+    if (projects.length > largoMax) {
+        const viewAllButton = document.createElement("li");
+        viewAllButton.textContent = "Ver todos los proyectos";
+        viewAllButton.classList.add("view-all-projects");
+        viewAllButton.style.cursor = "pointer";
+        viewAllButton.onclick = function () {
+            window.location.href = "all-projects.html";
+        };
+        filterContainer.appendChild(viewAllButton);
+    }
+
+    // Seleccionar aleatoriamente 10 proyectos sin repetir IDs
+    let projectsToShow;
+    if (projects.length > largoMax) {
+        const shuffledProjects = projects.sort(() => 0.5 - Math.random()); // Mezclar array
+        projectsToShow = shuffledProjects.slice(0, largoMax); // Tomar 10 aleatorios
+    } else {
+        projectsToShow = projects;
+    }
 
     projectsToShow.forEach((project) => {
         // Crear la tarjeta
@@ -44,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <a href="${project.images[0]}" title="${project.title}" data-gallery="project-gallery-app" class="glightbox preview-link">
                     <i class="bi bi-zoom-in"></i>
                 </a>
-                <a href="portfolio-details.html?pid=${project.pid}" title="More Details" class="details-link">
+                <a href="project-details.html?pid=${project.pid}" title="More Details" class="details-link">
                     <i class="bi bi-link-45deg"></i>
                 </a>
             </div>
